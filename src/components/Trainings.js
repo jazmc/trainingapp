@@ -3,6 +3,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MUIDataTable from "mui-datatables";
 import { ThemeProvider } from "@mui/styles";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import moment from "moment";
 
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-material.css";
@@ -15,6 +16,10 @@ export default function Trainings() {
 
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
+
+  const formatDate = (value) => {
+    return moment(value).format("dd.MM.yyyy HH:mm");
+  };
 
   const deleteTrainings = (arr) => {
     console.log(arr);
@@ -52,7 +57,7 @@ export default function Trainings() {
       options: {
         sortable: true,
         filter: true,
-        //customBodyRender: formatDate,
+        customBodyRender: formatDate,
         sortOrder: "asc",
       },
     },
