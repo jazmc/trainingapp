@@ -12,7 +12,6 @@ import {
 import _ from "lodash";
 
 export default function Charts(props) {
-  const [cdata, setCdata] = useState([]);
   const [trainings, setTrainings] = useState([]);
 
   useEffect(() => {
@@ -37,13 +36,6 @@ export default function Charts(props) {
       duration: _.sumBy(a, _.lowerCase("duration")),
     }))
     .value();
-
-  useEffect(() => {
-    setCdata(cData);
-  }, [trainings]);
-
-  console.log(trainings);
-  console.log(cdata);
 
   return (
     <div style={{ height: "calc(100vh - 112px)" }}>
