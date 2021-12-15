@@ -49,14 +49,16 @@ export default function Calendar() {
   console.log("events:", events);
 
   return (
-    <Cal
-      selectable
-      events={events}
-      localizer={localizer}
-      views={allViews}
-      defaultView="week"
-      formats={formats}
-      onSelectEvent={(event) => alert(event.title)}
-    />
+    <div style={{ height: "calc(100vh - 112px)" }}>
+      <Cal
+        selectable
+        events={events}
+        localizer={localizer}
+        views={allViews}
+        defaultView="week"
+        formats={formats}
+        onSelectEvent={(event) => alert(event.title)}
+      />
+    </div>
   );
 }
