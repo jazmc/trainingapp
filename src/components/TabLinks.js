@@ -5,6 +5,7 @@ import AppBar from "@mui/material/AppBar";
 import Customers from "./Customers";
 import Trainings from "./Trainings";
 import Calendar from "./Calendar";
+import Charts from "./Charts";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
@@ -30,11 +31,13 @@ export default function TabLinks() {
           <Tab value="trainings" label="Trainings" />
           <Tab value="customers" label="Customers" />
           <Tab value="calendar" label="Calendar" />
+          <Tab value="charts" label="Charts" />
         </Tabs>
       </AppBar>
       {nav === "trainings" && <Trainings />}
       {nav === "customers" && <Customers />}
       {nav === "calendar" && <Calendar />}
+      {nav === "charts" && <Charts />}
     </div>
   );
 }

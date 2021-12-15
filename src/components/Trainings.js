@@ -112,6 +112,9 @@ export default function Trainings() {
     selectableRowsOnClick: true,
     selectableRowsHideCheckboxes: true,
     selectableRowsHeader: true,
+    onDownload: (buildHead, buildBody, columns, data) => {
+      return "\uFEFF" + buildHead(columns) + buildBody(data);
+    },
   };
 
   useEffect(() => {
