@@ -1,7 +1,13 @@
 {
   "name": "trainingapp",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "React training app",
+  "main": "web.js",
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "jazmc",
   "dependencies": {
     "@date-io/date-fns": "^2.11.0",
     "@emotion/react": "^11.7.0",
