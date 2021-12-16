@@ -25,12 +25,8 @@ export default function AddTraining(props) {
     customer: "",
   });
 
-  useEffect(() => {
-    setTraining({ ...training, customer: "" });
-    console.log(editing.links);
-  }, [editing]);
-
   const handleClickOpen = () => {
+    setTraining({ ...training, customer: props.editing.links[0].href });
     setOpen(true);
   };
 
