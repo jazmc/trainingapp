@@ -16,8 +16,6 @@ export default function AddTraining(props) {
   const [open, setOpen] = useState(false);
   const editing = props.editing;
 
-  console.log(editing);
-
   const [training, setTraining] = useState({
     date: "",
     activity: "",
@@ -26,7 +24,6 @@ export default function AddTraining(props) {
   });
 
   const handleClickOpen = () => {
-    setTraining({ ...training, customer: props.editing.links[0].href });
     setOpen(true);
   };
 
@@ -41,7 +38,11 @@ export default function AddTraining(props) {
   };
 
   const inputChanged = (event) => {
-    setTraining({ ...training, [event.target.name]: event.target.value });
+    setTraining({
+      ...training,
+      [event.target.name]: event.target.value,
+      customer: props.editing.links[0].href,
+    });
   };
 
   return (
