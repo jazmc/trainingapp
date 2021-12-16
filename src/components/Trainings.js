@@ -22,7 +22,6 @@ export default function Trainings() {
   };
 
   const deleteTrainings = (arr) => {
-    console.log(arr);
     if (
       window.confirm(
         "Are you sure you want to delete selected trainings (" +

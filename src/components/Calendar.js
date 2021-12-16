@@ -46,7 +46,6 @@ export default function Calendar() {
         end: moment(trg.date).add(trg.duration, "minutes").toDate(),
       })
   );
-  console.log("events:", events);
 
   return (
     <div style={{ height: "calc(100vh - 112px)" }}>

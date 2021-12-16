@@ -80,7 +80,6 @@ export default function Customers() {
   };
 
   const deleteCustomers = (arr) => {
-    console.log(arr);
     if (
       window.confirm(
         "Are you sure you want to delete selected customers (" +
@@ -199,8 +198,6 @@ export default function Customers() {
         return customers.at(item.dataIndex);
       });
       setEditing(current[0]);
-      console.log("Editing below:");
-      console.log(editing);
       setDeletes(selectedIds);
     },
     onRowsDelete: (e) => {
