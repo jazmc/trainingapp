@@ -9,8 +9,6 @@ export default function Calendar() {
   const localizer = momentLocalizer(moment);
   let allViews = Object.keys(Views).map((k) => Views[k]);
 
-  let formats = {};
-
   const getTrainings = () => {
     fetch("https://customerrest.herokuapp.com/gettrainings", {
       method: "GET",
@@ -55,7 +53,6 @@ export default function Calendar() {
         localizer={localizer}
         views={allViews}
         defaultView="week"
-        formats={formats}
         onSelectEvent={(event) => alert(event.title)}
       />
     </div>
