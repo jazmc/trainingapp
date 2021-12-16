@@ -33,6 +33,7 @@ export default function AddTraining(props) {
 
   const handleSave = () => {
     props.addTraining(training);
+    console.log("Training for url: " + training.customer);
     handleClose();
   };
 
