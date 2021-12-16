@@ -162,7 +162,11 @@ export default function Customers() {
                   editing={editing}
                   value={value[0].href}
                 />
-                <AddTraining customer={editing} addTraining={addTraining} />
+                <AddTraining
+                  customer={editing}
+                  customerUrl={editing.links[0].href}
+                  addTraining={addTraining}
+                />
               </React.Fragment>
             );
           }

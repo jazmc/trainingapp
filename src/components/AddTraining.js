@@ -16,13 +16,11 @@ export default function AddTraining(props) {
   const [open, setOpen] = useState(false);
   const customer = props.customer;
 
-  console.log(props.customer.links[1].href);
-
   const [training, setTraining] = useState({
     date: "",
     activity: "",
     duration: "",
-    customer: props.customer.links[1].href,
+    customer: props.customerUrl,
   });
 
   const handleClickOpen = () => {
