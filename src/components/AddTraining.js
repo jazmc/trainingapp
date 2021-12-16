@@ -22,7 +22,7 @@ export default function AddTraining(props) {
     date: "",
     activity: "",
     duration: "",
-    customer: editing.links[0].href,
+    customer: "",
   });
 
   useEffect(() => {
