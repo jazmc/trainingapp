@@ -164,7 +164,7 @@ export default function Customers() {
                 />
                 <AddTraining
                   customer={editing}
-                  customerUrl={editing.links[0].href}
+                  customerUrl={editing.links}
                   addTraining={addTraining}
                 />
               </React.Fragment>
@@ -203,7 +203,8 @@ export default function Customers() {
         return customers.at(item.dataIndex);
       });
       setEditing(current[0]);
-      console.log("Editing: " + JSON.stringify(editing));
+      console.log("Editing below:");
+      console.log(editing);
       setDeletes(selectedIds);
     },
     onRowsDelete: (e) => {
