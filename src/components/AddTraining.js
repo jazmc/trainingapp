@@ -20,7 +20,7 @@ export default function AddTraining(props) {
     date: "",
     activity: "",
     duration: "",
-    customer: props.customer.links[0].href,
+    customer: props.customer,
   });
 
   const handleClickOpen = () => {
