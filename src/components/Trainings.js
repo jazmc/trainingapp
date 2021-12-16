@@ -18,7 +18,7 @@ export default function Trainings() {
   theme = responsiveFontSizes(theme);
 
   const formatDate = (value) => {
-    return moment(value).format("dd.MM.yyyy HH:mm");
+    return moment(value).format("DD.MM.yyyy HH:mm");
   };
 
   const deleteTrainings = (arr) => {
