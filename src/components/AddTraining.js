@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
@@ -14,14 +14,20 @@ import IconButton from "@mui/material/IconButton";
 
 export default function AddTraining(props) {
   const [open, setOpen] = useState(false);
-  const customer = props.customer;
+  const editing = props.editing;
+
+  console.log(editing);
 
   const [training, setTraining] = useState({
     date: "",
     activity: "",
     duration: "",
-    customer: props.customerUrl,
+    customer: editing.links[0].href,
   });
+
+  useEffect(() => {
+    setTraining({ ...training, customer: editing.links[0].href });
+  }, [editing]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -53,7 +59,7 @@ export default function AddTraining(props) {
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>
-          New Training for {customer.firstname} {customer.lastname}
+          New Training for {editing.firstname} {editing.lastname}
         </DialogTitle>
         <DialogContent>
           <LocalizationProvider dateAdapter={AdapterDateFns}>
